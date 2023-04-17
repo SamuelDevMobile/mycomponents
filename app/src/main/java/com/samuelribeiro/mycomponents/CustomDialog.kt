@@ -34,6 +34,7 @@ class CustomDialog(context: Context, attrs: AttributeSet?) : LinearLayout(contex
         setupNameButtons(attributes)
         setupHintFirstEdit(attributes)
         setupHintSecondEdit(attributes)
+        setupHowManyFields(attributes)
 
         attributes.recycle()
     }
@@ -50,6 +51,10 @@ class CustomDialog(context: Context, attrs: AttributeSet?) : LinearLayout(contex
         btnNegativeButton.background = drawable
     }
 
+    fun setOnClickButtonNegative(onClick: () -> Unit) {
+        btnNegativeButton.setOnClickListener { onClick() }
+    }
+
     fun setTextColorButtonPositive(color: Int) {
         btnPositiveButton.setTextColor(color)
     }
@@ -62,13 +67,26 @@ class CustomDialog(context: Context, attrs: AttributeSet?) : LinearLayout(contex
         btnPositiveButton.setOnClickListener { onClick() }
     }
 
-    fun setOnClickButtonNegative(onClick: () -> Unit) {
-        btnPositiveButton.setOnClickListener { onClick() }
+    private fun setupHowManyFields(attributes: TypedArray) {
+        val fields = attributes.getInt(R.styleable.CustomDialog_howManyFieldsToDisplay, 0)
+        when(fields) {
+            1 -> {
+                editFirstField.visibility = VISIBLE
+                editSecondField.visibility = GONE
+            }
+            2 -> {
+                editFirstField.visibility = GONE
+                editSecondField.visibility = VISIBLE
+            }
+            else -> {
+                editFirstField.visibility = VISIBLE
+                editSecondField.visibility = VISIBLE
+            }
+        }
     }
 
     private fun setupHintSecondEdit(attributes: TypedArray) {
         val hintEditSecondField = attributes.getString(R.styleable.CustomDialog_editTextHintSecondField)
-        editSecondField.visibility = View.VISIBLE
         setHintSecondEdit(hintEditSecondField)
     }
 
@@ -78,7 +96,6 @@ class CustomDialog(context: Context, attrs: AttributeSet?) : LinearLayout(contex
 
     private fun setupHintFirstEdit(attributes: TypedArray) {
         val hintEditFirstField = attributes.getString(R.styleable.CustomDialog_editTextHintFirstField)
-        editFirstField.visibility = View.VISIBLE
         setHintFirstEdit(hintEditFirstField)
     }
 

@@ -9,5 +9,6 @@
         <attr name="nameNegativeButton" format="string" />
         <attr name="editTextHintFirstField" format="string" />
         <attr name="editTextHintSecondField" format="string" />
+        <attr name="howManyFieldsToDisplay" format="integer" />
     </declare-styleable>
 </resources>
