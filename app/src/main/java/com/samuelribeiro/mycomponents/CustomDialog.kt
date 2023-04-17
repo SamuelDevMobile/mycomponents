@@ -58,6 +58,14 @@ class CustomDialog(context: Context, attrs: AttributeSet?) : LinearLayout(contex
         btnPositiveButton.background = drawable
     }
 
+    fun setOnClickButtonPositive(onClick: () -> Unit) {
+        btnPositiveButton.setOnClickListener { onClick() }
+    }
+
+    fun setOnClickButtonNegative(onClick: () -> Unit) {
+        btnPositiveButton.setOnClickListener { onClick() }
+    }
+
     private fun setupHintSecondEdit(attributes: TypedArray) {
         val hintEditSecondField = attributes.getString(R.styleable.CustomDialog_editTextHintSecondField)
         editSecondField.visibility = View.VISIBLE
