@@ -3,4 +3,11 @@
     <declare-styleable name="CustomToolbar">
         <attr name="getStringForBundle" format="string" />
     </declare-styleable>
+
+    <declare-styleable name="CustomDialog">
+        <attr name="namePositiveButton" format="string" />
+        <attr name="nameNegativeButton" format="string" />
+        <attr name="editTextHintFirstField" format="string" />
+        <attr name="editTextHintSecondField" format="string" />
+    </declare-styleable>
 </resources>
