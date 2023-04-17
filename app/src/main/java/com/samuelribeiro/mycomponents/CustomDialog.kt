@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.res.TypedArray
 import android.graphics.drawable.Drawable
 import android.util.AttributeSet
+import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatButton
@@ -31,7 +32,8 @@ class CustomDialog(context: Context, attrs: AttributeSet?) : LinearLayout(contex
         btnPositiveButton = findViewById(R.id.btn_positive)
 
         setupNameButtons(attributes)
-        setupNameHintEditText(attributes)
+        setupHintFirstEdit(attributes)
+        setupHintSecondEdit(attributes)
 
         attributes.recycle()
     }
@@ -44,7 +46,7 @@ class CustomDialog(context: Context, attrs: AttributeSet?) : LinearLayout(contex
         btnNegativeButton.setTextColor(color)
     }
 
-    fun setBackGroundButtonNegativ3(drawable: Drawable) {
+    fun setBackGroundButtonNegative(drawable: Drawable) {
         btnNegativeButton.background = drawable
     }
 
@@ -56,15 +58,24 @@ class CustomDialog(context: Context, attrs: AttributeSet?) : LinearLayout(contex
         btnPositiveButton.background = drawable
     }
 
-    private fun setupNameHintEditText(attributes: TypedArray) {
-        val hintEditFirstField = attributes.getString(R.styleable.CustomDialog_editTextHintFirstField)
+    private fun setupHintSecondEdit(attributes: TypedArray) {
         val hintEditSecondField = attributes.getString(R.styleable.CustomDialog_editTextHintSecondField)
-        setHintEdit(hintEditFirstField, hintEditSecondField)
+        editSecondField.visibility = View.VISIBLE
+        setHintSecondEdit(hintEditSecondField)
     }
 
-    private fun setHintEdit(hintEditFirstField: String?, hintEditSecondField: String?) {
-        editFirstField.hint = hintEditFirstField.toString()
+    private fun setHintSecondEdit(hintEditSecondField: String?) {
         editSecondField.hint = hintEditSecondField.toString()
+    }
+
+    private fun setupHintFirstEdit(attributes: TypedArray) {
+        val hintEditFirstField = attributes.getString(R.styleable.CustomDialog_editTextHintFirstField)
+        editFirstField.visibility = View.VISIBLE
+        setHintFirstEdit(hintEditFirstField)
+    }
+
+    private fun setHintFirstEdit(hintEditFirstField: String?) {
+        editFirstField.hint = hintEditFirstField.toString()
     }
 
     private fun setupNameButtons(attributes: TypedArray) {
