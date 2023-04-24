@@ -43,6 +43,22 @@ class CustomDialog(context: Context, attrs: AttributeSet?) : LinearLayout(contex
         txtTitle.text = title
     }
 
+    fun setHintFirstField(textHint: String) {
+        editFirstField.hint = textHint
+    }
+
+    fun setHintSecondField(textHint: String) {
+        editSecondField.hint = textHint
+    }
+
+    fun setTextFirstField(txt: String) {
+        editFirstField.setText(txt)
+    }
+
+    fun setTextSecondField(txt: String) {
+        editSecondField.setText(txt)
+    }
+
     fun setTextColorButtonNegative(color: Int) {
         btnNegativeButton.setTextColor(color)
     }
