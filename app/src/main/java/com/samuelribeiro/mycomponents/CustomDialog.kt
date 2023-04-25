@@ -59,13 +59,9 @@ class CustomDialog(context: Context, attrs: AttributeSet?) : LinearLayout(contex
         editSecondField.setText(txt)
     }
 
-    fun getTextFirstField() {
-        editFirstField.text.toString()
-    }
+    fun getTextFirstField(): String = editFirstField.text.toString()
 
-    fun getTextSecondField() {
-        editSecondField.text.toString()
-    }
+    fun getTextSecondField(): String = editSecondField.text.toString()
 
     fun setTextColorButtonNegative(color: Int) {
         btnNegativeButton.setTextColor(color)
