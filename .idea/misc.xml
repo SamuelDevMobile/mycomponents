@@ -9,6 +9,7 @@
         <entry key="app/src/main/res/drawable/toast_bg_info.xml" value="0.166" />
         <entry key="app/src/main/res/drawable/toast_bg_success.xml" value="0.173" />
         <entry key="app/src/main/res/drawable/toast_bg_warning.xml" value="0.166" />
+        <entry key="app/src/main/res/layout/dialog_custom.xml" value="0.25" />
         <entry key="app/src/main/res/layout/toast_custom.xml" value="0.2598958333333333" />
         <entry key="app/src/main/res/layout/toolbar_custom_add.xml" value="0.2598958333333333" />
       </map>

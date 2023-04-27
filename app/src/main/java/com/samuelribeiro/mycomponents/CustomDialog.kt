@@ -17,6 +17,7 @@ class CustomDialog(context: Context, attrs: AttributeSet?) : LinearLayout(contex
     private var txtTitle: AppCompatTextView = AppCompatTextView(context)
     private var editFirstField: AppCompatEditText = AppCompatEditText(context)
     private var editSecondField: AppCompatEditText = AppCompatEditText(context)
+    private var editThirdField: AppCompatEditText = AppCompatEditText(context)
     private var btnNegativeButton: AppCompatButton = AppCompatButton(context)
     private var btnPositiveButton: AppCompatButton = AppCompatButton(context)
 
@@ -28,6 +29,7 @@ class CustomDialog(context: Context, attrs: AttributeSet?) : LinearLayout(contex
         txtTitle = findViewById(R.id.txt_title_dialog)
         editFirstField = findViewById(R.id.edit_first_field)
         editSecondField = findViewById(R.id.edit_second_field)
+        editThirdField = findViewById(R.id.edit_third_field)
         btnNegativeButton = findViewById(R.id.btn_negative)
         btnPositiveButton = findViewById(R.id.btn_positive)
 
@@ -93,14 +95,22 @@ class CustomDialog(context: Context, attrs: AttributeSet?) : LinearLayout(contex
             1 -> {
                 editFirstField.visibility = VISIBLE
                 editSecondField.visibility = GONE
+                editThirdField.visibility = GONE
             }
             2 -> {
                 editFirstField.visibility = GONE
                 editSecondField.visibility = VISIBLE
+                editThirdField.visibility = GONE
+            }
+            3 -> {
+                editFirstField.visibility = GONE
+                editSecondField.visibility = GONE
+                editThirdField.visibility = VISIBLE
             }
             else -> {
                 editFirstField.visibility = VISIBLE
                 editSecondField.visibility = VISIBLE
+                editThirdField.visibility = VISIBLE
             }
         }
     }
