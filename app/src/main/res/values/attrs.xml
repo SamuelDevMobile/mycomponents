@@ -9,6 +9,7 @@
         <attr name="nameNegativeButton" format="string" />
         <attr name="editTextHintFirstField" format="string" />
         <attr name="editTextHintSecondField" format="string" />
+        <attr name="editTextHintThirdField" format="string" />
         <attr name="howManyFieldsToDisplay" format="integer">
             <enum name="firstField" value="1"/>
             <enum name="secondField" value="2"/>

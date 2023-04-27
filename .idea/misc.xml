@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../../layout/custom_preview.xml" value="0.28307692307692306" />
         <entry key="app/src/main/res/drawable/ic_warning.xml" value="0.166" />
         <entry key="app/src/main/res/drawable/toast_bg_default.xml" value="0.166" />
         <entry key="app/src/main/res/drawable/toast_bg_error.xml" value="0.166" />

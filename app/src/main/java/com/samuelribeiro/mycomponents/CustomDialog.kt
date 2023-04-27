@@ -36,6 +36,7 @@ class CustomDialog(context: Context, attrs: AttributeSet?) : LinearLayout(contex
         setupNameButtons(attributes)
         setupHintFirstEdit(attributes)
         setupHintSecondEdit(attributes)
+        setupHintThirdEdit(attributes)
         setupHowManyFields(attributes)
 
         attributes.recycle()
@@ -53,6 +54,10 @@ class CustomDialog(context: Context, attrs: AttributeSet?) : LinearLayout(contex
         editSecondField.hint = textHint
     }
 
+    fun setHintThirdField(textHint: String) {
+        editThirdField.hint = textHint
+    }
+
     fun setTextFirstField(txt: String) {
         editFirstField.setText(txt)
     }
@@ -61,9 +66,15 @@ class CustomDialog(context: Context, attrs: AttributeSet?) : LinearLayout(contex
         editSecondField.setText(txt)
     }
 
+    fun setTextThirdField(txt: String){
+        editThirdField.setText(txt)
+    }
+
     fun getTextFirstField(): String = editFirstField.text.toString()
 
     fun getTextSecondField(): String = editSecondField.text.toString()
+
+    fun getTextThirdField(): String = editThirdField.text.toString()
 
     fun setTextColorButtonNegative(color: Int) {
         btnNegativeButton.setTextColor(color)
@@ -115,32 +126,25 @@ class CustomDialog(context: Context, attrs: AttributeSet?) : LinearLayout(contex
         }
     }
 
-    private fun setupHintSecondEdit(attributes: TypedArray) {
-        val hintEditSecondField = attributes.getString(R.styleable.CustomDialog_editTextHintSecondField)
-        setHintSecondEdit(hintEditSecondField)
+    private fun setupHintFirstEdit(attributes: TypedArray) {
+        val hintEditFirstField = attributes.getString(R.styleable.CustomDialog_editTextHintFirstField)
+        editFirstField.hint = hintEditFirstField.toString()
     }
 
-    private fun setHintSecondEdit(hintEditSecondField: String?) {
+    private fun setupHintSecondEdit(attributes: TypedArray) {
+        val hintEditSecondField = attributes.getString(R.styleable.CustomDialog_editTextHintSecondField)
         editSecondField.hint = hintEditSecondField.toString()
     }
 
-    private fun setupHintFirstEdit(attributes: TypedArray) {
-        val hintEditFirstField = attributes.getString(R.styleable.CustomDialog_editTextHintFirstField)
-        setHintFirstEdit(hintEditFirstField)
-    }
-
-    private fun setHintFirstEdit(hintEditFirstField: String?) {
-        editFirstField.hint = hintEditFirstField.toString()
+    private fun setupHintThirdEdit(attributes: TypedArray){
+        val hintEditThirdField = attributes.getString(R.styleable.CustomDialog_editTextHintThirdField)
+        editThirdField.hint = hintEditThirdField.toString()
     }
 
     private fun setupNameButtons(attributes: TypedArray) {
         val txtPositiveButton = attributes.getString(R.styleable.CustomDialog_namePositiveButton)
         val txtNegativeButton = attributes.getString(R.styleable.CustomDialog_nameNegativeButton)
-        setTextButton(txtPositiveButton, txtNegativeButton)
-    }
-
-    private fun setTextButton(namePositiveButton: String?, nameNegativeButton: String?) {
-        btnPositiveButton.text = namePositiveButton.toString()
-        btnNegativeButton.text = nameNegativeButton.toString()
+        btnPositiveButton.text = txtPositiveButton.toString()
+        btnNegativeButton.text = txtNegativeButton.toString()
     }
 }
